@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { auth } from "../../config/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const Header = ({ toggleSidebar, handleLogout }) => {
 	const [dropdownOpen, setDropdownOpen] = useState(false);
+	const [user] = useAuthState(auth);
 
 	return (
 		<header className='flex items-center justify-between px-6 py-4 bg-white border-b-4 border-indigo-600'>
@@ -27,7 +30,8 @@ const Header = ({ toggleSidebar, handleLogout }) => {
 				</button>
 			</div>
 			<div className='flex items-center'>
-				<div className='relative'>
+				<div className='relative flex'>
+					<div className='mr-4 mt-2'>{user?.displayName || user?.email}</div>
 					<button
 						className='relative z-10 block w-8 h-8 overflow-hidden rounded-full shadow focus:outline-none'
 						onClick={() => setDropdownOpen(!dropdownOpen)}
