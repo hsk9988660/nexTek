@@ -1,0 +1,20 @@
+.swal2-popup .swal2-title {
+	margin-bottom: 2rem !important;
+	margin-top: 0px !important;
+  padding-bottom: 2rem;
+}
+.swal2-popup.swal2-toast.swal2-show {
+	margin-bottom: 5rem;
+	z-index: 1000;
+	position: relative;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+	.swal2-popup.swal2-toast {
+		padding: 10px !important;
+	}
+	.swal2-popup .swal2-title {
+		margin-bottom: 0rem !important;
+		margin-top: 1rem !important;
+	}
+}
